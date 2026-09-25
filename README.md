@@ -17,7 +17,7 @@ py -m pip install pyinstaller
 build_exe.bat
 ```
 
-完成後執行 `dist\InvoicePrizeChecker.exe`。程式本身只用 Python 標準函式庫；PyInstaller 只在打包時需要。EXE 執行時需連網，且不提供離線對獎。
+完成後執行 `dist\InvoicePrizeChecker_IconUpdated.exe`。程式本身只用 Python 標準函式庫；PyInstaller 只在打包時需要。EXE 執行時需連網，且不提供離線對獎。
 
 程式圖示素材位於 `assets/`；打包時會同時設為 Windows EXE 圖示及視窗圖示。
 
