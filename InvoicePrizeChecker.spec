@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='InvoicePrizeChecker',
+    name='InvoicePrizeChecker_IconUpdated',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
