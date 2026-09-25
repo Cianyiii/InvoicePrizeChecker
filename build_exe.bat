@@ -1,8 +1,8 @@
 @echo off
 setlocal
-py -m PyInstaller --noconfirm --clean --onefile --windowed --name InvoicePrizeChecker --icon "assets\invoice_prize_icon.ico" --add-data "assets\invoice_prize_icon.ico;assets" app.py
+py -m PyInstaller --noconfirm --clean InvoicePrizeChecker.spec
 if errorlevel 1 exit /b %errorlevel%
 echo.
-echo Built: dist\InvoicePrizeChecker.exe
+echo Built: dist\InvoicePrizeChecker_IconUpdated.exe
 endlocal
 
