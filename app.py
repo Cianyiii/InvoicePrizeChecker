@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import html
 import re
+import os
+import sys
 import threading
 import urllib.error
 import urllib.parse
@@ -16,6 +18,12 @@ OFFICIAL_PERIOD = "https://www.etax.nat.gov.tw/etw-main/ETW183W2_{term}/"
 PRIZES = [("特別獎", 10_000_000), ("特獎", 2_000_000), ("頭獎", 200_000),
           ("二獎", 40_000), ("三獎", 10_000), ("四獎", 4_000),
           ("五獎", 1_000), ("六獎", 200)]
+
+
+def resource_path(relative_path: str) -> str:
+    """Resolve bundled assets in both source and PyInstaller one-file builds."""
+    base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
 
 class TextParser(HTMLParser):
@@ -92,6 +100,10 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("統一發票線上對獎")
+        try:
+            self.iconbitmap(resource_path(os.path.join("assets", "invoice_prize_icon.ico")))
+        except tk.TclError:
+            pass
         self.geometry("930x700")
         self.minsize(760, 580)
         self.configure(bg="#f4f6fa")
